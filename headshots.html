@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="nav-bar">
+        <a href="homepage.html">
+            <p class="name">MARIE GODDERIS</p>
+            <p>PHOTOGRAPHY</p>
+        </a>
+    </nav>
+    
+    <div class="content" id="carousel"></div>
+    
+    <nav class="bottom-nav">
+        <a href="graduation.html">GRADUATION</a>
+        <a href="headshots.html">HEADSHOTS</a>
+        <a href="events.html">EVENTS</a>
+        <a href="faq.html">FAQ</a>
+    </nav>
+</body>
+
+<script>
+    var index = 0;
+    var graduation_pictures = [
+        './imgsfinal/headshots/head1.jpg',
+        './imgsfinal/headshots/head2.jpg',
+        './imgsfinal/headshots/head3.jpg',
+        './imgsfinal/headshots/head4.jpg',
+        './imgsfinal/headshots/head5.jpg',
+        './imgsfinal/headshots/head6.jpg',
+        './imgsfinal/headshots/head8.jpg',
+        './imgsfinal/headshots/head9.jpg',
+        './imgsfinal/headshots/head10.jpg',
+        './imgsfinal/headshots/head11.jpg',
+        './imgsfinal/headshots/head12.jpg',
+        './imgsfinal/headshots/head13.jpg',
+        './imgsfinal/headshots/head14.jpg',
+        './imgsfinal/headshots/head15.jpg',
+        './imgsfinal/headshots/head16.jpg',
+        './imgsfinal/headshots/head17.jpg',
+        './imgsfinal/headshots/head18.jpg',
+        './imgsfinal/headshots/head19.jpg',
+    
+    ];
+    
+    function initializeCarousel() {
+        var img = document.createElement("img");
+        img.src = graduation_pictures[index];
+        img.id = "left-image";
+        document.getElementById('carousel').appendChild(img);
+        index += 1;
+        var img = document.createElement("img");
+        img.src = graduation_pictures[index];
+        img.id = "center-image";
+        document.getElementById('carousel').appendChild(img);
+        index += 1;
+        var img = document.createElement("img");
+        img.src = graduation_pictures[index];
+        img.id = "right-image";
+        document.getElementById('carousel').appendChild(img);
+        index += 1;
+        var img = document.createElement("img");
+        img.src = graduation_pictures[index];
+        img.id = "outside-right-image";
+        document.getElementById('carousel').appendChild(img);
+        index += 1;
+        var img = document.createElement("img");
+        img.src = "";
+        img.id = "outside-left-image";
+        document.getElementById('carousel').appendChild(img);
+    }
+    
+    function createNewImage() {
+        var img = document.createElement("img");
+        img.src = graduation_pictures[index];
+        img.id = "outside-right-image";
+        document.getElementById('carousel').appendChild(img);
+    }
+    
+    function carouselRotation() {
+        document.getElementById('outside-left-image').remove();
+        document.getElementById('left-image').id = 'outside-left-image';
+        document.getElementById('center-image').id = 'left-image';
+        document.getElementById('right-image').id = 'center-image';
+        document.getElementById('outside-right-image').id = 'right-image';
+    }
+
+    var intervalId = window.setInterval(function(){
+        carouselRotation();
+        createNewImage();
+        index += 1;
+        if (index >= graduation_pictures.length)
+            index = 0;
+    }, 5000);
+    
+    initializeCarousel();
+</script>

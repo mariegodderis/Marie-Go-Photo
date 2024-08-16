@@ -1,0 +1,141 @@
+@import url('https://fonts.cdnfonts.com/css/libre-franklin');
+
+body {
+    background-color: white;
+    font-family: "Libre Franklin", sans-serif;
+    color: black;
+    overflow-x: hidden; 
+}
+
+.container {
+    padding: 20px;
+}
+
+.container h1 {
+    color: black;
+    font-family: "Libre Franklin", sans-serif;
+    text-align: center;
+}
+
+.faq-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.faq-questions {
+    flex: 1;
+    margin-right: 20px;
+    font-size: 1rem; 
+}
+
+.faq-link {
+    flex: 1;
+    text-align: right;
+}
+
+.faq-link img {
+    width: 100%; 
+    height: auto;
+}
+
+details {
+    background-color: whitesmoke;
+    color: black;
+    margin-bottom: 20px;
+}
+
+summary {
+    padding: 0.5em 1.3rem;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    transition: height 1s ease;
+    cursor: pointer;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary:after {
+    content: "\002B";
+}
+
+details[open] summary {
+    border-bottom: 1px solid #aaa;
+    margin-bottom: 0.5em;
+}
+
+details[open] summary:after {
+    content: "\00D7";
+}
+
+details[open] div {
+    padding: 0.5em 1em;
+}
+
+.nav-bar {
+    width: 100%;
+    height: 50px;
+    padding: 30px 0 0 25px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+
+.nav-bar a p {
+    font-family: "Libre Franklin", sans-serif;
+    font-size: 26px;
+    color: black;
+    text-decoration: none;
+    margin: 0;
+}
+
+.nav-bar a,
+.nav-bar a:link,
+.nav-bar a:visited,
+.nav-bar a:hover,
+.nav-bar a:active {
+    text-decoration: none;
+}
+
+.nav-bar a .name {
+    font-weight: 800;
+}
+
+.bottom-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+.bottom-nav a {
+    color: black;
+    text-decoration: none;
+    padding: 14px 20px;
+    transition: font-style 0.3s, color 0.3s;
+    font-weight: 300;
+    font-family: "Libre Franklin", sans-serif;
+}
+
+.bottom-nav a:hover {
+    font-style: italic;
+}
+
+@media only screen and (max-width: 768px) {
+    .faq-content {
+        flex-direction: column; 
+    }
+    .faq-questions {
+        margin-right: 0; 
+        margin-bottom: 20px; 
+    }
+    .faq-link {
+        text-align: center; 
+    }
+}
